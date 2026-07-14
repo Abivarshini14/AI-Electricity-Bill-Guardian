@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AI Electricity Bill Guardian
 
 A full-stack electricity usage, billing estimation, and AI-assisted energy management app for households, shops, and offices — with multi-property support, admin-configurable tariffs, an electricity complaint system, and a Grok-powered assistant with a deterministic fallback.
@@ -186,3 +187,6 @@ See `docs/DEPLOYMENT.md`. Summary: `backend/render.yaml` defines a Python web se
 - Database schema: `docs/DATABASE_SCHEMA.md`
 - End-to-end workflow: `docs/WORKFLOW.md`
 - Deployment details: `docs/DEPLOYMENT.md`
+=======
+# AI-Electricity-Bill-Guardian
+>>>>>>> 24dc172676fc70d235b832f1a57ef02489b914da
