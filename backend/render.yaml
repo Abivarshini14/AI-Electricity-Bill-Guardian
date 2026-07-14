@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: ai-electricity-bill-guardian-backend
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: JWT_ALGORITHM
+        value: HS256
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: "1440"
+      - key: DATABASE_URL
+        value: sqlite:///./electricity_guardian.db
+      - key: GROK_API_KEY
+        sync: false
+      - key: GROK_API_URL
+        value: https://api.x.ai/v1/chat/completions
+      - key: GROK_MODEL
+        value: grok-2-latest
+      - key: FRONTEND_URL
+        sync: false
+      - key: ENVIRONMENT
+        value: production
+    disk:
+      name: guardian-data
+      mountPath: /opt/render/project/src/backend
+      sizeGB: 1
